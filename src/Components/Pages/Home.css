@@ -1,0 +1,120 @@
+
+.video-div{
+   max-width: 100%;
+   height: auto;
+   margin: 0px 0%;
+}
+video{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: none;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.192);
+
+}
+.content{
+    font-size: 25px;
+    position: absolute;
+    width: 350px;
+    height: 100px;
+    top:50%;
+    left: 15%;
+    color: white;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+.whyET-div{
+    background-color: rgb(249, 249, 249);
+    max-width: 100%;
+    height: auto;
+    margin: 80px 10%;
+    text-align: center;
+    padding: 5px 2px 25px 25px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.192);
+    border-radius: 50px;
+    font-family: 'Satisfy', cursive;
+    font-size: 20px;
+
+}
+.whyET-head{
+    text-decoration: underline;
+}
+.what-we-are-div{
+    max-width: 100%;
+    height: auto;
+    margin: 25px 8%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+
+}
+.what-we-are-img{
+    width: 320px;
+    height: auto;
+    border-radius: 10px;
+
+
+}
+.what-we-are-img-name{
+    margin-top: 10px;
+    text-decoration: none;
+}
+.what-we-are-img-container{
+    margin-bottom: 50px;
+    text-align: center;
+}
+.what-we-are-img-container:hover{
+    transform: scale(1.05);
+    transition: 1s;
+}
+.offeringimg{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.Elegant-Interior-offerings{
+    padding: 0px 10px;
+    margin: 80px 50px;
+    border-left: 5px solid rgb(109, 78, 38);
+}
+
+@media only screen and (max-width: 1000px) {
+    .content{
+        font-size: 12px;
+        transition: 2s;
+        top:8%;
+        left: 0%;
+        width: 300px;
+        padding-left: 0px;
+
+    }
+
+     .whyET-div{
+        margin: 40px 8%;
+        transition: 2s;
+        text-align: left;
+        font-size: 13px;
+    
+    }
+    .what-we-are-img-container{
+        margin-left: 10px;
+        margin-bottom: 50px;
+        transition: 2s;
+    }
+    .Elegant-Interior-offerings{
+        padding-left: 15px;
+        margin-left: 15px;
+        margin-right: 10px;
+        transition: 2s;
+    }
+    .what-we-are-img{
+        width: 280px;
+        transition: 2s;
+    }
+   
+}

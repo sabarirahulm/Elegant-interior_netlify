@@ -1,0 +1,126 @@
+/* Navbar.css */
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  padding: 5px 0px;
+}
+
+nav {
+  position: fixed; /* Set navbar position to fixed */
+  top: 0; /* Stick it to the top of the viewport */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Occupy full width */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  backdrop-filter: blur(50px);
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.logo {
+  width: 300px;
+  margin-left: 2%;
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 2px 20px;
+  position: relative;
+}
+
+nav ul li .nav-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 15px;
+  color: #000;
+  padding-left: 0;
+}
+
+nav ul li .nav-link::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: rgb(177, 101, 0);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+nav ul li .nav-link:hover::after {
+  width: 100%;
+  transition: 0.5s;
+}
+
+nav ul li .nav-link:active,
+nav ul li .nav-link:focus {
+  color: rgb(109, 78, 38);
+}
+
+nav .fas {
+  display: none;
+
+}
+.dot{
+   color: rgb(255, 99, 8);
+   width: 25px;
+}
+
+/* CSS for small screens */
+@media only screen and (max-width: 1300px) {
+  
+  .logo {
+    width: 280px;
+    margin-left: 2%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    transition: 3s;
+  }
+
+  nav .fas {
+    display: block;
+    font-size: 20px;
+    padding-right: 10px;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(500px);
+    background-color: rgba(250, 235, 215, 0.877);
+    right: -250px;
+    width: 150px;
+    height: 100;
+    max-height: fit-content;
+    padding-top: 50px;
+    padding-left: 10px;
+    margin-bottom: 0;
+    z-index: 2;
+    transition: right 0.5s;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 25px;
+  }
+
+  nav ul .fas {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    cursor: pointer;
+  }
+
+  /* Additional styles for the opened menu */
+  nav ul.menu-open {
+    right: 0;
+  }
+}
