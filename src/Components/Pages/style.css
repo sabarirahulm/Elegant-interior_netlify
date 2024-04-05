@@ -21,10 +21,9 @@
     margin-top: 5px !important;
 }
 .form-div{
-  background-color: white;
-  border-radius: 25px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  padding: 15px 35px;
+  border-radius: 10px !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3) !important;
+  padding: 10px 20px;
   background: transparent;
   backdrop-filter: blur(5px);
 
@@ -44,22 +43,9 @@
     font-weight: bold;
   }
   
-  .custom-form input[type='text'],
-  .custom-form input[type='email'],
-  .custom-form input[type='tel'],
-  .custom-form input[type='password'],
-  .custom-form input[type='number'],
-  .custom-form input[type='date'],
-  .custom-form select {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+
   
-  .custom-form textarea {
+  /* .custom-form textarea {
     width: 100%;
     height: 150px;
     padding: 10px;
@@ -67,7 +53,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
-  }
+  } */
   
   .custom-form button {
     width: 100%;

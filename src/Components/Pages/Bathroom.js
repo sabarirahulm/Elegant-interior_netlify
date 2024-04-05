@@ -7,6 +7,11 @@ import bathroomImg3 from './Img and vid/bathroom img/img3.webp';
 import bathroomImg4 from './Img and vid/bathroom img/img4.webp';
 import bathroomImg5 from './Img and vid/bathroom img/img5.webp';
 import bathroomImg6 from './Img and vid/bathroom img/img6.webp';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 
 function Bathroom(){
 
@@ -55,14 +60,30 @@ function Bathroom(){
                 <div className="alldesigns">
                     {bathroomImages.map((image, index) => {
                         return (
-                            <div className="BGcontainer" key={index}>
-                                <div className="BGimgcontainer">
-                                    <img src={image.img} alt={image.title} className="DGgimg" />
-                                </div>
-                                <div className="BGtxtcontainer">
-                                    <p className="BGtype">{image.title}</p>
-                                </div>
-                            </div>
+                            // <div className="BGcontainer" key={index}>
+                            //     <div className="BGimgcontainer">
+                            //         <img src={image.img} alt={image.title} className="DGgimg" />
+                            //     </div>
+                            //     <div className="BGtxtcontainer">
+                            //         <p className="BGtype">{image.title}</p>
+                            //     </div>
+                            // </div>
+                            <Card sx={{ maxWidth: 345,marginTop:'25px' }} key={index}>
+<CardActionArea>
+  <CardMedia
+    component="img"
+    height="300"
+    image={image.img}
+    alt={image.title}
+  />
+  <CardContent>
+    <Typography gutterBottom variant="p" component="div">
+    {image.title}
+    </Typography>
+  </CardContent>
+</CardActionArea>
+
+</Card>
                         );
                     })}
                 </div>

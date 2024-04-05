@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
-import Card from 'react-bootstrap/Card';
-import Form from 'react-bootstrap/Form';
-import { Button } from 'react-bootstrap';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import TextField from '@mui/material/TextField';
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 import './style.css';
-import { Toaster } from '@blueprintjs/core';
 
-
-const appToaster = Toaster.create({
-  position:'bottom'
-});
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 function Contact() {
   const [name, setName] = useState('');
@@ -16,74 +19,77 @@ function Contact() {
   const [mobile, setMobile] = useState('');
   const [whatsappOptIn, setWhatsappOptIn] = useState(false);
   const [pincode, setPincode] = useState('');
-  const [Message, setMessage] = useState('');
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formData = {
-      name: name,
-      email: email,
-      mobile: mobile,
-      whatsappOptIn: whatsappOptIn,
-      pincode: pincode
-    };
-    console.log(formData);
+    // Check if all fields are filled
+    if (name && email && mobile && pincode) {
+      setMessage('Our Team Will Contact You!');
+      setOpenSnackbar(true);
 
-    // Reset form fields
-    setName('');
-    setEmail('');
-    setMobile('');
-    setWhatsappOptIn(false);
-    setPincode('');
-
-    
-    setMessage('Our Team Will Contact You!')
-    
+      // Reset form fields
+      setName('');
+      setEmail('');
+      setMobile('');
+      setWhatsappOptIn(false);
+      setPincode('');
+    } else {
+      setMessage('Please fill in all fields');
+      setOpenSnackbar(true);
+    }
   };
-    
-    return(
-      <div className="contact-div">
-        <div className='form-div'>
-          <div style={{color:'green',textAlign:'center',height:'20px'}}>
-          {Message && <h4>{Message}</h4>}
-          </div>
-        <Card style={{ width: '18rem' }}>
-          <Card.Body>
-            <h3 className='contact-title'>Meet a designer</h3>
-            <Form className="custom-form" onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label htmlFor="formBasicName" className="label">Name</label>
-                <input type="text" className="form-control" id="formBasicName" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="formBasicEmail" className="form-label">Email address</label>
-                <input type="email" className="form-control" id="formBasicEmail" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="formBasicMobile" className="form-label">Mobile Number</label>
-                <input type="tel" className="form-control" id="formBasicMobile" placeholder="Enter your mobile number" value={mobile} onChange={(e) => setMobile(e.target.value)} />
-              </div>
-              <div className="mb-3 form-check">
-                <input type="checkbox" className="form-check-input" id="formBasicCheckbox" checked={whatsappOptIn} onChange={(e) => setWhatsappOptIn(e.target.checked)} />
-                <label className="form-check-label" htmlFor="formBasicCheckbox"> You can reach me on WhatsApp</label>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="formBasicPincode" className="form-label">Current Residence Pincode</label>
-                <input type="text" className="form-control" id="formBasicPincode" placeholder="Enter your pincode" value={pincode} onChange={(e) => setPincode(e.target.value)} />
-              </div>
-              <Button variant="primary" type="submit">
-                Book 3D Design Session
-              </Button>
-            </Form>
-          </Card.Body>
-        </Card>
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
+
+  return (
+    <div className="contact-div">
+      <Card style={{ width: '20rem', backgroundColor: 'transparent' }} className='form-div'>
+        <CardContent>
+          <h3 className='contact-title'>Meet a designer</h3>
+          <form className="custom-form" onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <TextField label="Name" variant="filled" fullWidth value={name} onChange={(e) => setName(e.target.value)} required />
+            </div>
+            <div className="mb-3">
+              <TextField label="Email" variant="filled" fullWidth value={email} onChange={(e) => setEmail(e.target.value)} required/>
+            </div>
+            <div className="mb-3">
+              <TextField label="Mobile Number" variant="filled" fullWidth value={mobile} onChange={(e) => setMobile(e.target.value)} required/>
+            </div>
+            <div className="mb-3 form-check">
+              <FormControlLabel
+                control={<Checkbox checked={whatsappOptIn} onChange={(e) => setWhatsappOptIn(e.target.checked)} />}
+                label="You can reach me on WhatsApp"
+              />
+            </div>
+            <div className="mb-3">
+              <TextField label="Current Residence Pincode" variant="filled" fullWidth value={pincode} onChange={(e) => setPincode(e.target.value)} required/>
+            </div>
+            <Button variant="contained" color="primary" type="submit">
+              Book 3D Design Session
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
+        <div>
+        <Alert onClose={handleCloseSnackbar} severity="success">
+          <div>{message}</div>
+        </Alert>
         </div>
-      </div>
-    );
+      </Snackbar>
+    </div>
+  );
 }
 
 export default Contact;

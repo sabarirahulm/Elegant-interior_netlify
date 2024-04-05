@@ -7,6 +7,11 @@ import bedroomImg3 from './Img and vid/bedroom img/img3.webp';
 import bedroomImg4 from './Img and vid/bedroom img/img4.jpg';
 import bedroomImg5 from './Img and vid/bedroom img/img5.webp';
 import bedroomImg6 from './Img and vid/bedroom img/img6.webp';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 
 function Bedroom() {
     const bedroomImg = [
@@ -54,14 +59,30 @@ function Bedroom() {
                 <div className="alldesigns">
                     {bedroomImg.map((DG, index) => {
                         return (
-                            <div className="BGcontainer" key={index}>
-                                <div className="BGimgcontainer">
-                                    <img src={DG.img} alt={DG.title} className="DGgimg" />
-                                </div>
-                                <div className="BGtxtcontainer">
-                                    <p className="BGtype">{DG.title}</p>
-                                </div>
-                            </div>
+                            // <div className="BGcontainer" key={index}>
+                            //     <div className="BGimgcontainer">
+                            //         <img src={DG.img} alt={DG.title} className="DGgimg" />
+                            //     </div>
+                            //     <div className="BGtxtcontainer">
+                            //         <p className="BGtype">{DG.title}</p>
+                            //     </div>
+                            // </div>
+                            <Card sx={{ maxWidth: 345,marginTop:'25px' }} key={index}>
+<CardActionArea>
+  <CardMedia
+    component="img"
+    height="300"
+    image={DG.img}
+    alt={DG.title}
+  />
+  <CardContent>
+    <Typography gutterBottom variant="p" component="div">
+    {DG.title}
+    </Typography>
+  </CardContent>
+</CardActionArea>
+
+</Card>
                         );
                     })}
                 </div>

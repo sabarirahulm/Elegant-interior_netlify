@@ -4,9 +4,9 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.container {
+/* .Container {
   padding: 5px 0px;
-}
+} */
 
 nav {
   position: fixed; /* Set navbar position to fixed */
@@ -35,15 +35,14 @@ nav ul li {
   position: relative;
 }
 
-nav ul li .nav-link {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-size: 15px;
-  color: #000;
-  padding-left: 0;
+.nav-link {
+  text-decoration: none !important;
+  font-size: 15px !important;
+  color: #000 !important;
+  padding-left: 0 !important;
 }
 
-nav ul li .nav-link::after {
+.nav-link::after {
   content: '';
   width: 0;
   height: 3px;
@@ -53,18 +52,18 @@ nav ul li .nav-link::after {
   bottom: -5px;
 }
 
-nav ul li .nav-link:hover::after {
+.nav-link:hover::after {
   width: 100%;
   transition: 0.5s;
 }
 
-nav ul li .nav-link:active,
-nav ul li .nav-link:focus {
+.nav-link:active,
+.nav-link:focus {
   color: rgb(109, 78, 38);
 }
 
-nav .fas {
-  display: none;
+.menuiocon {
+  display: none !important;
 
 }
 .dot{
@@ -75,7 +74,7 @@ nav .fas {
 /* CSS for small screens */
 @media only screen and (max-width: 1300px) {
   
-  .logo {
+   .logo {
     width: 280px;
     margin-left: 2%;
     margin-top: 2px;
@@ -83,28 +82,16 @@ nav .fas {
     color: rgb(0, 0, 0);
     font-size: 20px;
     transition: 3s;
-  }
+  } 
 
-  nav .fas {
-    display: block;
+  .menuiocon {
+    display: block !important;
     font-size: 20px;
     padding-right: 10px;
   }
 
   nav ul {
-    position: fixed;
-    top: 0;
-    backdrop-filter: blur(500px);
-    background-color: rgba(250, 235, 215, 0.877);
-    right: -250px;
-    width: 150px;
-    height: 100;
-    max-height: fit-content;
-    padding-top: 50px;
-    padding-left: 10px;
-    margin-bottom: 0;
-    z-index: 2;
-    transition: right 0.5s;
+    display: none !important;
   }
 
   nav ul li {
@@ -112,12 +99,7 @@ nav .fas {
     margin: 25px;
   }
 
-  nav ul .fas {
-    position: absolute;
-    top: 25px;
-    left: 30px;
-    cursor: pointer;
-  }
+
 
   /* Additional styles for the opened menu */
   nav ul.menu-open {
