@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import './Home.css'
 import videoBG from '../Pages/Img and vid/interior.mp4'
 import offeringsImg from "./Img and vid/offeringimgAPI";
@@ -6,6 +7,12 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 
 function Home() {
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <div>
 

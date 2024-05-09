@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import bgimg from './Img and vid/BG img/modular_kitchen_designs.webp'
 import './modularkitchen.css'
 import img1 from './Img and vid/kitchen img/img1.webp';
@@ -16,6 +17,12 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 
 
 function Modularkitchen(){
+    useEffect(() => {
+        window.scroll({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, []);
 
     const kitchenImg=[
         {
@@ -81,7 +88,7 @@ function Modularkitchen(){
     alt={DG.title}
   />
   <CardContent>
-    <Typography gutterBottom variant="p" component="div">
+    <Typography gutterBottom variant="p" component="div" fontFamily={'poppins !important'}>
     {DG.title}
     </Typography>
   </CardContent>

@@ -4,14 +4,14 @@
     width: 100%;
     background-color: rgb(56, 55, 85);
     color: white;
-    padding-top: 5px;
+    padding-top: 15px;
+    padding-bottom: 30px;
 }
 .fa-brands{
     text-decoration: none;
-    margin-left: 20px;
-    font-size: 15px;
+    margin-right: 20px;
+    font-size: 25px;
     color: white;
-    border: solid 2px white;
     padding: 7px;
     border-radius: 50%;
 }
@@ -82,12 +82,15 @@
     margin-top: 2px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 800px) {
     
     .footer-container{
-        align-items:center;
+        align-items:start;
         flex-direction: column;
         justify-content: start !important;
+    }
+    .company-name, .OFFERINGS-div, .contactus-div{
+          margin: 0px 10px;
     }
     .line{
         width: 100%;

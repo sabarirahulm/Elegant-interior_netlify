@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import bgimg from './Img and vid/BG img/bathroom.webp';
 import './modularkitchen.css';
 import bathroomImg1 from './Img and vid/bathroom img/img1.webp';
@@ -11,10 +12,15 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea} from '@mui/material';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 
 function Bathroom(){
-
+    useEffect(() => {
+        window.scroll({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, []);
 
     const bathroomImages = [
         {
@@ -78,7 +84,7 @@ function Bathroom(){
     alt={image.title}
   />
   <CardContent>
-    <Typography gutterBottom variant="p" component="div">
+    <Typography gutterBottom variant="p" component="div" fontFamily={'poppins !important'}>
     {image.title}
     </Typography>
   </CardContent>

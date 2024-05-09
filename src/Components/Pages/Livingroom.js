@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import bgimg from './Img and vid/BG img/living_room.jpg'
 import './modularkitchen.css'
 import livingRoomImg1 from './Img and vid/living room img/img1.webp';
@@ -14,6 +15,12 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
 function Livingroom(){
+    useEffect(() => {
+        window.scroll({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, []);
 
     const kitchenImg=[
         {
@@ -75,7 +82,7 @@ function Livingroom(){
     alt={DG.title}
   />
   <CardContent>
-    <Typography gutterBottom variant="p" component="div">
+    <Typography gutterBottom variant="p" component="div" fontFamily={'poppins !important'}>
     {DG.title}
     </Typography>
   </CardContent>

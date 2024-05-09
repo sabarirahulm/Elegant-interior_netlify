@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from "react";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import TextField from '@mui/material/TextField';
@@ -21,6 +22,13 @@ function Contact() {
   const [pincode, setPincode] = useState('');
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [message, setMessage] = useState('');
+  
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

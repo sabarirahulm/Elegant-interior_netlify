@@ -3,6 +3,10 @@
     text-align: left;
     padding: 10px;
 }
+.about {
+    margin: 25px 10%;
+    padding: 10px;
+}
 .title-desinggallery{
     border-left: 5px solid rgb(109, 78, 38);
     padding-left: 10px;

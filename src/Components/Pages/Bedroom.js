@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import bgimg from './Img and vid/BG img/bedroom-desktop-nn.webp';
 import './modularkitchen.css';
 import bedroomImg1 from './Img and vid/bedroom img/img1.webp';
@@ -14,6 +15,12 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
 function Bedroom() {
+    useEffect(() => {
+        window.scroll({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, []);
     const bedroomImg = [
         {
             id: 1,
@@ -76,7 +83,7 @@ function Bedroom() {
     alt={DG.title}
   />
   <CardContent>
-    <Typography gutterBottom variant="p" component="div">
+    <Typography gutterBottom variant="p" component="div" fontFamily={'poppins !important'}>
     {DG.title}
     </Typography>
   </CardContent>

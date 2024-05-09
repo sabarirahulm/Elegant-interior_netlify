@@ -1,8 +1,15 @@
 import React from "react";
+import { useEffect } from "react";
 import './Designgallery.css';
 import DGImg from "./Img and vid/DG";
 
 function Designgallery() {
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <div className="designgallery">
       <div className="about">
