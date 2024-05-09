@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
 function Bathroom(){
+    
 
     const bathroomImages = [
         {
